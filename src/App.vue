@@ -97,6 +97,26 @@ onMounted(() => {
               <div>Personal</div>
             </label>
 
+            <label>
+              <input 
+              type="radio"
+              name="category"
+              value="studies"
+              v-model="input_category"/>
+              <span class="bubble studies"></span>
+              <div>Studies</div>
+            </label>
+
+            <label>
+              <input 
+              type="radio"
+              name="category"
+              value="others"
+              v-model="input_category"/>
+              <span class="bubble others"></span>
+              <div>Others</div>
+            </label>
+
           </div>
 
           <input type="submit" value="Add todo">
