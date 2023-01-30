@@ -57,23 +57,23 @@ onMounted(() => {
 
     <section class="greeting">
       <h2 class="title">
-        What's up, <input type="text" placeholder="Name here" v-model="name"/>
+        Olá, <input type="text" placeholder="Nome aqui" v-model="name"/>
       </h2>
     </section>
 
     <section class="create-todo">
       <h3>
-        CREATE A TODO
+        CRIAR UMA TAREFA
       </h3>
 
       <form @submit.prevent="addTodo">
-        <h4>What's on your todo list?</h4>
+        <h4>O que tem na sua lista de tarefas?</h4>
         <input 
           type="text" 
-          placeholder="e.g. make a video" 
+          placeholder="ex: fazer compras" 
           v-model="input_content" />
 
-          <h4>Pick a category</h4>
+          <h4>Escolha uma categoria</h4>
 
           <div class="options">
 
@@ -84,7 +84,7 @@ onMounted(() => {
               value="business"
               v-model="input_category"/>
               <span class="bubble business"></span>
-              <div>Business</div>
+              <div>Profissional</div>
             </label>
 
             <label>
@@ -94,7 +94,7 @@ onMounted(() => {
               value="personal"
               v-model="input_category"/>
               <span class="bubble personal"></span>
-              <div>Personal</div>
+              <div>Pessoal</div>
             </label>
 
             <label>
@@ -104,7 +104,7 @@ onMounted(() => {
               value="studies"
               v-model="input_category"/>
               <span class="bubble studies"></span>
-              <div>Studies</div>
+              <div>Estudos</div>
             </label>
 
             <label>
@@ -114,21 +114,21 @@ onMounted(() => {
               value="others"
               v-model="input_category"/>
               <span class="bubble others"></span>
-              <div>Others</div>
+              <div>Outros</div>
             </label>
 
           </div>
 
-          <input type="submit" value="Add todo">
+          <input type="submit" value="Adicionar Tarefa">
 
       </form>
     </section>
 
     <section class="todo-list">
-      <h3>TODO LIST</h3>
+      <h3>LISTA DE TAREFAS</h3>
       <div class="list">
 
-        <div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+        <div v-for="todo, index in todos_asc" :key="index" :class="`todo-item ${todo.done && 'done'}`">
 
         <label>
           <input type="checkbox" v-model="todo.done"/>
@@ -140,7 +140,7 @@ onMounted(() => {
         </div>
 
         <div class="actions">
-          <button class="delete" @click="removeTodo(todo)">Delete</button>
+          <button class="delete" @click="removeTodo(todo)">Apagar</button>
         </div>
 
         </div>
